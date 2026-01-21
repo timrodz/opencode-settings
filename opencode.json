@@ -2,7 +2,6 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "opencode",
   "agent": {
-    // Primary
     "build": {
       "model": "zai-coding-plan/glm-4.7",
       "tools": {
@@ -19,9 +18,8 @@
         "bash": false
       }
     },
-    // Sub-agents
     "general": {
-      "model": "zai-coding-plan/glm-4.7"
+      "model": "zai-coding-plan/glm-4.7-flash"
     },
     "explore": {
       "model": "zai-coding-plan/glm-4.7-flash"
