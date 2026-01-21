@@ -1,0 +1,40 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "opencode",
+  "agent": {
+    // Primary
+    "build": {
+      "model": "zai-coding-plan/glm-4.7",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "plan": {
+      "model": "opencode/grok-code",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    // Sub-agents
+    "general": {
+      "model": "zai-coding-plan/glm-4.7"
+    },
+    "explore": {
+      "model": "zai-coding-plan/glm-4.7-flash"
+    },
+    "code-reviewer": {
+      "description": "Reviews code for best practices and potential issues",
+      "mode": "subagent",
+      "model": "opencode/big-pickle",
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    }
+  }
+}
